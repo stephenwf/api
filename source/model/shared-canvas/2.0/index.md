@@ -2,7 +2,7 @@
 title: Shared Canvas Data Model
 title_override: "Shared Canvas Data Model 2.0"
 id: shared-canvas
-layout: sub-page
+layout: spec
 categories: [specifications, presentation-api, spec-doc]
 major: 2
 minor: 0
@@ -45,81 +45,80 @@ __Previous Version:__ [1.0][prev-version]
 
 ### 2.1. Classes
 
-Canvas
-Space
+* Canvas
+* Space
 
 ### 2.2. Relationships
 
-Relationships from other ontologies
+* Relationships from other ontologies
 
 ## 2.3. Use of Annotations
 
-painting
+* painting
 
 
 ## 3. Structure
 
 ### 3.1. Classes
 
-Collection
-Manifest
-Sequence
-Range
+* Collection
+* Manifest
+* Sequence
+* Range
 
-AnnotationList DEPRECATED --> AnnotationPage
-Layer DEPRECATED --> AnnotationCollection
-Zone DEPRECATED --> Canvas
+* AnnotationList DEPRECATED --> AnnotationPage
+* Layer DEPRECATED --> AnnotationCollection
+* Zone DEPRECATED --> Canvas
 
 # 3.2. Relationships
 
-hasParts          d: *  r: rdf:List [of Collection, Range, Manifest]
-hasSequences d: Manifest r: rdf:List [of Sequence] spo hasParts
-hasCanvases   d: Sequence r: rdf:List [of Canvas] spo hasParts
-hasImageAnnotations d: Canvas r: rdf:List [of Annotation, where body is a Image]
-hasLists             d: U(Canvas, Layer)  r: rdf:List [of AnnotationList]
+* hasParts          d: *  r: rdf:List [of Collection, Range, Manifest]
+* hasSequences d: Manifest r: rdf:List [of Sequence] spo hasParts
+* hasCanvases   d: Sequence r: rdf:List [of Canvas] spo hasParts
+* hasImageAnnotations d: Canvas r: rdf:List [of Annotation, where body is a Image]
+* hasLists             d: U(Canvas, Layer)  r: rdf:List [of AnnotationList]
+* hasStartCanvas  d: U(Manifest, Sequence)   r: Canvas
+* hasContentLayer d: Range r: Layer
 
-hasCollections  d: Collection r: rdf:List [of Collection] DEPRECATED
-hasManifests    d: Collection r: rdf:List [of Manifest] DEPRECATED
-hasRanges        d: Range r: rdf:List [of Range] DEPRECATED
-hasAnnotations d: AnnotationList r: rdf:List [of Annotation] DEPRECATED
+* hasCollections  d: Collection r: rdf:List [of Collection] DEPRECATED
+* hasManifests    d: Collection r: rdf:List [of Manifest] DEPRECATED
+* hasRanges        d: Range r: rdf:List [of Range] DEPRECATED
+* hasAnnotations d: AnnotationList r: rdf:List [of Annotation] DEPRECATED
 
-hasStartCanvas  d: U(Manifest, Sequence)   r: Canvas
-hasContentLayer d: Range r: Layer
-
-Plus relationships from other ontologies
+* Plus relationships from other ontologies
 
 ## 4. Other Features
 
 ### 4.1. Classes
 
-ViewingDirection
-ViewingHint
-MetadataPair
+* ViewingDirection
+* ViewingHint
+* MetadataPair
 
 ### 4.2. Relationships
 
-metadataLabels d: *  r: List [of MetadataPair]
-presentationDate d: U( ) r: xsd:dateTime
-attributionLabel d: * r: xsd:string
-viewingDirection d: U(Manifest, Sequence) r: ViewingDirection
-viewingHint d: * r: ViewingHint
+* metadataLabels d: *  r: List [of MetadataPair]
+* presentationDate d: U( ) r: xsd:dateTime
+* attributionLabel d: * r: xsd:string
+* viewingDirection d: U(Manifest, Sequence) r: ViewingDirection
+* viewingHint d: * r: ViewingHint
 
 ### 4.3. Instances
 
-ViewingDirection
-leftToRightDirection
-rightToLeftDirection
-topToBottomDirection
-bottomToTopDirection
+* ViewingDirection
+  * leftToRightDirection
+  * rightToLeftDirection
+  * topToBottomDirection
+  * bottomToTopDirection
 
-ViewingHint
-pagedHint
-nonPagedHint
-continuousHint
-individualsHint
-topHint
-multiPartHint
-facingPagesHint
+* ViewingHint
+  * pagedHint
+  * nonPagedHint
+  * continuousHint
+  * individualsHint
+  * topHint
+  * multiPartHint
+  * facingPagesHint
 
 
 ## 5. Examples
@@ -156,6 +155,3 @@ Many thanks to the members of the [IIIF][iiif-community] for their continuous en
 [icon-na]: /img/metadata-api/not_allowed.png "Not allowed"
 
 {% include acronyms.md %}
-
-
-
