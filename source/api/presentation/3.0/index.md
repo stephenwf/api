@@ -1104,17 +1104,19 @@ The Manifest _MUST_ have an `items` property, which is an array of JSON-LD objec
     "label": { "en": [ "Attribution" ] },
     "value": { "en": [ "Provided by Example Organization" ] }
   },
-  "logo": {
-    "id": "https://example.org/logos/institution1.jpg",
-    "type": "Image",
-    "service": [
-      {
-        "id": "https://example.org/service/inst1",
-        "type": "ImageService3",
-        "profile": "level2"
-      }
-    ]
-  },
+  "logo": [
+    {
+      "id": "https://example.org/logos/institution1.jpg",
+      "type": "Image",
+      "service": [
+        {
+          "id": "https://example.org/service/inst1",
+          "type": "ImageService3",
+          "profile": "level2"
+        }
+      ]
+    }
+  ],
 
   // Links
   "homepage": {
@@ -1663,17 +1665,19 @@ __Protocol Behavior__
     "label": { "en": [ "Attribution" ] },
     "value": { "en": [ "Provided by Example Organization" ] }
   },
-  "logo": {
-    "id": "https://example.org/logos/institution1.jpg",
-    "type": "Image",
-    "service": [
-      {
-        "id": "https://example.org/service/inst1",
-        "type": "ImageService3",
-        "profile": "level2"
-      }
-    ]
-  },
+  "logo": [
+    {
+      "id": "https://example.org/logos/institution1.jpg",
+      "type": "Image",
+      "service": [
+        {
+          "id": "https://example.org/service/inst1",
+          "type": "ImageService3",
+          "profile": "level2"
+        }
+      ]
+    }
+  ],
 
   "homepage": {
     "id": "https://example.org/info/book1/",
